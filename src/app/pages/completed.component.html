@@ -1,0 +1,50 @@
+<section class="completed-hero" role="banner" aria-label="Completed Projects Banner">
+  <div class="hero-img-wrapper">
+    <img
+      src="/assets/projects/ongoing/industrious.jpg"
+      alt="Completed infrastructure projects across India"
+      width="1920"
+      height="500"
+      class="hero-img"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-content">
+    <h1>COMPLETED PROJECTS</h1>
+    <p>
+      These projects stand as milestones of our engineering commitment — from roads and bridges to smart city solutions delivered across India.
+    </p>
+  </div>
+</section>
+
+<section class="completed-wrapper">
+  <h2 class="completed-title">OUR COMPLETED PROJECTS</h2>
+
+  <div class="completed-filters">
+    <button *ngFor="let filter of filters"
+            [class.active]="selectedFilter === filter"
+            (click)="selectedFilter = filter">
+      {{ filter }}
+    </button>
+  </div>
+
+  <div class="completed-grid">
+    <div class="completed-card" *ngFor="let project of filteredProjects">
+      <img [src]="project.image" [alt]="project.title" />
+      <div class="completed-overlay">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.location }} • {{ project.category }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="completed-counters" aria-label="Completed Milestones">
+  <div class="counter-box" *ngFor="let stat of counters">
+    <h3>{{ stat.value | number }}</h3>
+    <p>{{ stat.label }}</p>
+  </div>
+</section>
+

@@ -1,0 +1,142 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .heading-top {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    animation: zoomInOut 2.5s ease-in-out infinite alternate;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .form-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .field {
+        flex: 1;
+      }
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    .agree-box {
+      margin-bottom: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      button {
+        background-color: #ffcc00 !important;
+        color: #000 !important;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #000 !important;
+          color: #ffcc00 !important;
+        }
+      }
+
+      .login-link {
+        padding: 0.75rem 2rem;
+        border: 1px solid #000;
+        color: #000;
+        background: transparent;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+          background: #000;
+          color: #ffcc00;
+        }
+      }
+    }
+  }
+}
+
+/* Asterisk styling */
+.required {
+  color: red;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &.valid {
+    color: #3f51b5; // Angular Material blue
+  }
+}
+
+/* Red border for invalid fields */
+mat-form-field.invalid .mat-mdc-form-field-flex {
+  border: 1px solid red !important;
+  border-radius: 6px;
+}
+
+/* Animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .form-box {
+    padding: 1.5rem;
+  }
+
+  .heading-top {
+    font-size: 2rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+mat-form-field {
+  transition: all 0.3s ease;
+
+  &.ng-invalid.ng-touched .mat-mdc-form-field-flex {
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+  }
+
+  &.ng-valid.ng-touched .mat-mdc-form-field-flex {
+    border: 1px solid #3f51b5;
+    box-shadow: 0 0 5px #3f51b5;
+  }
+}

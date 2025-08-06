@@ -1,0 +1,21 @@
+<section class="career-hero">
+  <div class="content">
+    <h1>Careers at Opas Bizz</h1>
+    <p>Build the future of rural empowerment with us</p>
+  </div>
+</section>
+
+<section class="career-intro">
+  <h2>Why Work With Us?</h2>
+  <p>Opas Bizz is not just a company — it’s a mission-driven movement. We empower millions through digital transformation, and we want passionate people to help us scale impact across India and beyond.</p>
+</section>
+
+<section class="job-openings">
+  <h2>Current Openings</h2>
+  <div class="job-card" *ngFor="let job of jobOpenings">
+    <h3>{{ job.title }}</h3>
+    <p class="location">{{ job.location }} • {{ job.type }}</p>
+    <p>{{ job.description }}</p>
+    <a [href]="job.link" target="_blank" class="apply-btn">Apply Now</a>
+  </div>
+</section>

@@ -1,0 +1,197 @@
+<!-- Banner Card start -->
+<section class="hero-banner" role="banner" aria-label="About Banner Section">
+  <div
+    class="hero-slide"
+    *ngFor="let image of slideImages; let i = index"
+    [class.active]="i === currentSlideIndex"
+  >
+    <picture>
+      <source
+        [attr.srcset]="'assets/about_image/banner/' + image"
+        type="image/avif"
+      />
+      <img
+        [src]="'assets/images/' + image"
+        [alt]="slideTitles[i]"
+        width="1600"
+        height="400"
+        [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+        decoding="async"
+        class="slide-img"
+      />
+    </picture>
+
+    
+  </div>
+</section>
+<!-- Banner Card end -->
+
+
+
+<section class="about-company-section">
+  <div class="about-wrapper">
+    <!-- Carousel Image -->
+    <div class="about-image-box">
+      <img [src]="currentImage" alt="About Company Image" class="about-image" />
+      <div class="yellow-bg"></div>
+    </div>
+
+    <!-- Text Content -->
+    <div class="about-content-box">
+      <h2><span>ABOUT</span> COMPANY</h2>
+
+      <div class="experience-box">
+        <h3><span>10</span><br />YEARS OF EXPERIENCE</h3>
+      </div>
+
+      <h4>Improving quality of life with an integrated unified approach.</h4>
+      <p>
+        Opas Bizz Pvt. Ltd. is committed to enhancing lives through a unified blend of technology and infrastructure. From digital bill payments to major construction projects, our integrated approach ensures efficiency, accessibility, and long-term impact—empowering both urban and rural communities with smarter, faster, and more reliable services across India.
+      </p>
+
+      <div class="founder-sign">
+        <!-- <img src="assets/signature.png" alt="Signature" /> -->
+        <div>
+          <strong>David Houkr</strong><br />
+          <span>Architect </span>
+        </div>
+      </div>
+
+      <a class="cta-button" routerLink="/contact" routerLinkActive="active">GET IN TOUCH</a>
+    </div>
+  </div>
+</section>
+
+
+<!--  Vision & Mission Section start  -->
+<section class="vision-mission-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our <span>Vision</span> & <span>Mission</span></h2>
+      <p>We believe in building infrastructure that empowers future generations.</p>
+    </div>
+
+    <div class="vm-boxes">
+      <div class="vm-box">
+        <h3>Our Vision</h3>
+        <p>
+          To be a leading player in infrastructure development and digital financial inclusion by offering
+          innovative, sustainable, and inclusive solutions for India’s progress.
+        </p>
+      </div>
+
+      <div class="vm-box">
+        <h3>Our Mission</h3>
+        <p>
+          Deliver high-quality, cost-effective projects on time by employing motivated, flexible, and focused
+          teams. We exist to provide top-tier utility services and infrastructure to all parts of India.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  Vision & Mission Section end -->
+
+
+<!-- Core Values Section start -->
+<section class="core-values-section">
+  <div class="container">
+    <h2>Our <span>Core Values</span></h2>
+    <p class="subtitle">Guiding principles that shape everything we do.</p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <img src="assets/about_image/icons/integrity.svg" alt="Integrity Icon" />
+        <h3>Integrity</h3>
+        <p>We uphold the highest standards of honesty and transparency in every project we undertake.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/about_image/icons/innovation.svg" alt="Innovation Icon" />
+        <h3>Innovation</h3>
+        <p>We embrace new ideas and technologies to deliver cutting-edge infrastructure and digital services.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/about_image/icons/excellence.svg" alt="Excellence Icon" />
+        <h3>Excellence</h3>
+        <p>We strive for unmatched quality in every aspect of our operations and services.</p>
+      </div>
+
+      <div class="value-card">
+        <img src="assets/about_image/icons/customer-focus.svg" alt="Customer Focus Icon" />
+        <h3>Customer Focus</h3>
+        <p>We prioritize the needs of our clients and communities, ensuring satisfaction and long-term trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Core Values Section end -->
+
+<!-- Achievements & Milestones Section start -->
+<section class="achievements-section">
+  <div class="container">
+    <h2>Our <span>Milestones</span></h2>
+    <p class="subtitle">Proud moments that define our journey so far.</p>
+
+    <div class="stats-grid">
+      <div class="stat-box" *ngFor="let stat of achievementStats">
+        <h3>{{ stat.value }}</h3>
+        <p>{{ stat.label }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Achievements & Milestones Section end -->
+ <!-- Partners Section start -->
+  <section class="clients-section">
+  <div class="container">
+    <h2>Our <span>Clients</span> & <span>Certifications</span></h2>
+    <p class="subtitle">Trusted by government bodies, private sectors & institutions.</p>
+
+    <div class="clients-grid">
+      <img *ngFor="let logo of clientLogos" [src]="logo.src" [alt]="logo.alt" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+  <!-- Partners Section end -->
+
+  <!--  Final CTA  start -->
+<section class="final-cta-section">
+  <div class="container">
+    <h2>Ready to <span>Work with Us?</span></h2>
+    <p class="cta-text">
+      Let’s build something amazing together — whether it’s infrastructure, technology, or digital services.
+    </p>
+    <a href="/contact" class="cta-button">Get in Touch</a>
+  </div>
+</section>
+
+  <!--  Final CTA  end -->
+
+  <!-- /////////Testimonials Section start ///////// -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2>What Our <span>Clients Say</span></h2>
+    <p class="subtitle">Their satisfaction drives our success.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <img [src]="testimonial.photo" [alt]="testimonial.name" class="client-photo" />
+        <p class="quote">“{{ testimonial.quote }}”</p>
+        <div class="client-info">
+          <strong>{{ testimonial.name }}</strong><br />
+          <span>{{ testimonial.company }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--  ///// Testimonials Section end  //////// -->

@@ -1,0 +1,22 @@
+
+
+<!-- Header Section -->
+<app-header></app-header>
+
+<!-- Main Routed View (Home, About, etc.) -->
+<router-outlet></router-outlet>
+<!-- Scroll to Top Button -->
+<div
+  class="scroll-to-top-wrapper"
+  *ngIf="showButton"
+  (click)="scrollToTop()"
+  aria-label="Scroll to top"
+>
+  <!-- <div class="arrow">↑↑</div> -->
+  <div class="arrow">⮝</div>
+  <!-- <div class="text">Go Up</div> -->
+</div>
+
+<!-- Footer Section -->
+<app-footer></app-footer>
+

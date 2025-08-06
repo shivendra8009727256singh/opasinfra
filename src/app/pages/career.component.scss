@@ -1,0 +1,93 @@
+.career-hero {
+  background: url('/assets/career/banner.jpg') center/cover no-repeat;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+  .content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+  }
+}
+
+.career-intro {
+  padding: 3rem 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0d47a1;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #333;
+  }
+}
+
+.job-openings {
+  padding: 3rem 2rem;
+  background-color: #f5f5f5;
+
+  h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 2rem;
+  }
+
+  .job-card {
+    background: #fff;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #0d47a1;
+    }
+
+    .location {
+      font-size: 0.9rem;
+      color: gray;
+      margin-bottom: 0.5rem;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #0d47a1;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+
+      &:hover {
+        background: #08377c;
+      }
+    }
+  }
+}

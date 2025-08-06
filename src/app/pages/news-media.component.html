@@ -1,0 +1,20 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>News & Media</h1>
+    <p>Latest stories, coverage & press releases from Opas Bizz</p>
+  </div>
+</section>
+
+<section class="news-container">
+  <div class="news-card" *ngFor="let news of newsList">
+    <img [src]="news.image" alt="{{ news.title }}" />
+    <div class="news-text">
+      <h2>{{ news.title }}</h2>
+      <p>{{ news.summary }}</p>
+      <div class="meta">
+        <span>{{ news.date }}</span>
+        <a [href]="news.link" target="_blank">Read more</a>
+      </div>
+    </div>
+  </div>
+</section>

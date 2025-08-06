@@ -1,0 +1,113 @@
+<div class="register-container">
+  <div class="form-wrapper">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-box">
+      <div class="heading-top">Create Account</div>
+
+      <!-- First & Last Name -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('firstName') }">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required />
+          <mat-error *ngIf="isInvalid('firstName')">First name is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('lastName') }">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required />
+          <mat-error *ngIf="isInvalid('lastName')">Last name is required.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Phone & Email -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('phone') }">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phone" required />
+          <mat-error *ngIf="isInvalid('phone')">Enter valid phone number.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('email') }">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" required />
+          <mat-error *ngIf="isInvalid('email')">Enter a valid email.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Country & Role -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('country') }">
+          <mat-label>Country</mat-label>
+          <mat-select formControlName="country" required>
+            <mat-option value="India">India</mat-option>
+            <mat-option value="United States">United States</mat-option>
+            <mat-option value="Bangladesh">Bangladesh</mat-option>
+          </mat-select>
+          <mat-error *ngIf="isInvalid('country')">Select a country.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('role') }">
+          <mat-label>Account Type</mat-label>
+          <mat-select formControlName="role" required>
+            <mat-option value="buyer">Buyer Account</mat-option>
+            <mat-option value="supplier">Supplier Account</mat-option>
+          </mat-select>
+          <mat-error *ngIf="isInvalid('role')">Select an account type.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- GST & Location -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('gst') }">
+          <mat-label>GST Number</mat-label>
+          <input matInput formControlName="gst" required />
+          <mat-error *ngIf="isInvalid('gst')">Enter GST number.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('location') }">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" required />
+          <mat-error *ngIf="isInvalid('location')">Enter location.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Password & Confirm Password -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field" [ngClass]="{ 'invalid': isInvalid('password') }">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" required />
+          <button mat-icon-button matSuffix type="button" (click)="showPassword = !showPassword">
+            <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="isInvalid('password')">Minimum 6 characters required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field"
+          [ngClass]="{ 'invalid': isInvalid('confirmPassword') || registerForm.hasError('mismatch') }">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput [type]="showConfirmPassword ? 'text' : 'password'" formControlName="confirmPassword"
+            required />
+          <button mat-icon-button matSuffix type="button" (click)="showConfirmPassword = !showConfirmPassword">
+            <mat-icon>{{ showConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">
+            Passwords do not match.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Agree Checkbox -->
+      <mat-checkbox formControlName="agree" class="agree-box" required>
+        I agree to the terms and conditions
+      </mat-checkbox>
+      <mat-error *ngIf="isInvalid('agree')">You must agree before submitting.</mat-error>
+
+      <!-- Submit Button -->
+      <div class="btn-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
+          Sign Up
+        </button>
+        <a routerLink="/login" class="login-link">Sign In</a>
+      </div>
+    </form>
+  </div>
+</div>

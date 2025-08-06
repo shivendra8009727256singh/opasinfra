@@ -1,0 +1,16 @@
+<section class="hero">
+  <div class="overlay">
+    <div class="content">
+      <h1>World Records</h1>
+      <p>Celebrating the milestones that made history</p>
+    </div>
+  </div>
+</section>
+
+<section class="records-section">
+  <div class="record" *ngFor="let record of records">
+    <h2>{{ record.title }}</h2>
+    <p>{{ record.description }}</p>
+    <p class="date">{{ record.date }}</p>
+  </div>
+</section>

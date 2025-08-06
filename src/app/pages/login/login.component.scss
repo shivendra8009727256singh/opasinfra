@@ -1,0 +1,149 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 1rem;
+
+  .form-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: zoomInOut 3s ease-in-out infinite alternate;
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      .input-group {
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+
+        &.password-group {
+          input {
+            padding-right: 3rem;
+          }
+
+          .eye-toggle {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      button {
+        background-color: #ffcc00;
+        color: #000;
+        border: none;
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: #000;
+          color: #ffcc00;
+        }
+
+        &:disabled {
+          background-color: #eee;
+          color: #aaa;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+
+
+.forgot-link {
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+
+  a {
+    font-size: 0.9rem;
+     color: #0c0c0c;
+    
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+     color: #fcd603;
+    }
+  }
+}
+
+
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+
+  span {
+    margin-right: 0.5rem;
+    color: #333;
+  }
+
+  a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #fcd603;
+    }
+  }
+}
+
+

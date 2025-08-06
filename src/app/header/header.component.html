@@ -1,0 +1,98 @@
+<!-- TOP BAR -->
+<!-- <div class="top-bar" [class.hidden]="hideTopBar">
+  <div class="top-bar-content">
+    <div class="top-left">
+      <span><i class="fa fa-envelope"></i> info&#64;opasbizz.com</span>
+      <span><i class="fa fa-phone"></i> (+012) 045-12832</span>
+    </div>
+    <div class="top-right">
+      <span>Sun–Sat 9.45 AM</span>
+    </div>
+  </div>
+</div> -->
+<!-- TOP BAR -->
+<div class="top-bar" [class.hidden]="hideTopBar">
+  <div class="top-bar-content">
+    <address class="top-left" itemscope itemtype="https://schema.org/Organization">
+      
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@opasbizz.com" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa fa-envelope"></i> info&#64;opasbizz.com
+        </a> &nbsp;
+      <a href="tel:+9101204512832" itemprop="telephone">
+        <i class="fa fa-phone"></i> (+012) 045-12834,
+          (+012) 045-12835
+      </a>
+    </address>
+    <!-- <div class="top-right">
+      <span><i class="fa fa-clock"></i> Sun–Sat 9.45 AM</span>
+    </div> -->
+  </div>
+</div>
+
+
+
+
+
+<header class="main-header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/company_logo/opas_logo.svg" alt="Opas Bizz Logo" />
+      </a>
+    </div>
+
+    <nav class="nav" [class.open]="toggleMenu">
+      <div class="nav-item">
+        <a >About Us</a>
+        <div class="dropdown">
+          <a routerLink="/about">Our Company</a>
+          <a routerLink="/about/strength">Our Strength</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a >Projects & Services</a>
+        <div class="dropdown">
+          <a routerLink="/projects/ongoing">On Going</a>
+          <a routerLink="/projects/awarded">Awarded</a>
+          <a routerLink="/projects/road">Road & Highways</a>
+          <a routerLink="/projects/bridge">Bridge</a>
+          <a routerLink="/projects/building">Building</a>
+          <a routerLink="/projects/completed">Completed</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a >Events</a>
+        <div class="dropdown">
+          <a routerLink="/events/chitrakala">Chitrakala</a>
+          <a routerLink="/events/raktdaan">Raktdaan</a>
+          <a routerLink="/events/animal-help">Animal Healpline</a>
+          <a routerLink="/events/ppl">OpasInfra Premier League</a>
+          <a routerLink="/events/annual">Annual Event</a>
+        </div>
+      </div>
+
+      <a routerLink="/world-record">World Record</a>
+      <a routerLink="/news-media">News & Media</a>
+      <!-- <a routerLink="/investors">Investors Relation</a> -->
+      <a routerLink="/career">Career</a>
+      <a routerLink="/contact">Contact Us</a>
+      <div class="nav-item">
+        <a class="contact-btn" routerLink="/register" >Join Us</a>
+        <!-- <div class="dropdown styled-dropdown">
+          <a routerLink="/register">Admin</a>
+          <a routerLink="/register">Vendor</a>
+          <a routerLink="/register">User</a>
+        </div> -->
+      </div>
+
+    </nav>
+
+
+    <div class="menu-toggle" (click)="toggleMenu = !toggleMenu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>

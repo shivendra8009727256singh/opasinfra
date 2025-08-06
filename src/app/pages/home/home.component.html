@@ -1,0 +1,298 @@
+<div class="parent">
+
+  <section class="hero-banner" role="banner" aria-label="About Banner Section">
+    <div class="hero-slide" *ngFor="let image of slideImages; let i = index" [class.active]="i === currentSlideIndex">
+      <picture>
+        <source [attr.srcset]="'assets/home_image/' + image" type="image/avif" />
+        <img [src]="'assets/images/' + image" [alt]="slideTitles[i]" width="1600" height="600"
+          [attr.loading]="i === 0 ? 'eager' : 'lazy'" decoding="async" class="slide-img" />
+      </picture>
+
+      <div class="overlay"></div>
+
+      <div class="content-wrapper">
+        <h1>{{ slideTitles[i] }}</h1>
+        <nav aria-label="breadcrumb">
+          <ul class="breadcrumb">
+            <li><a routerLink="/">Home</a></li>
+            <li>{{ slideBreadcrumbs[i] }}</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- Banner Card end -->
+
+  <!-- project start -->
+  <div class="opas-project-wrapper">
+    <div class="opas-project-card" *ngFor="let project of opasProjects">
+      <div class="opas-image-container">
+        <img [src]="project.image" alt="Project Image" />
+        <div class="opas-hover-overlay">
+          <div class="opas-hover-content">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.subtitle }}</p>
+            <div class="opas-hover-plus">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- project end -->
+
+
+  <!--ProjectHighlight Start  -->
+  <section class="project-highlight" aria-labelledby="project-section-heading">
+    <h2 id="project-section-heading" class="visually-hidden">Featured Projects</h2>
+
+    <div class="project-grid">
+      <!-- Card 1 -->
+      <article class="project-card">
+        <img src='assets/home_image/train_con.avif' alt="Project Worker Back View" loading="lazy" decoding="async" />
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project-card">
+        <img src='assets/home_image/future_city.avif' alt="Worker Wearing Safety Gear" loading="lazy"
+          decoding="async" />
+      </article>
+
+      <!-- Card 3 with overlay -->
+      <article class="project-card overlay-card">
+        <img src='assets/home_image/railway_construction.avif' alt="Renovation Worker" loading="lazy"
+          decoding="async" />
+        <div class="overlay">
+          <h4>Renovation</h4>
+          <p>Dazzling Design</p>
+          <span class="plus-icon">+</span>
+        </div>
+      </article>
+
+      <!-- Text Block -->
+      <article class="text-card">
+        <h3>Building <strong>It better in concrete.</strong></h3>
+        <p>
+          When it comes to your house, don’t mess with the rest, trust the best.
+          Making your vision come true, that is what we do.
+        </p>
+        <a class="view-btn" href="/projects">View All</a>
+      </article>
+    </div>
+  </section>
+  <!-- all project start -->
+  <section class="project-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>OUR <span>PROJECT</span></h2>
+        <div class="filter-buttons">
+          <button class="active">All</button>
+          <button>Commercial</button>
+          <button>Education</button>
+          <button>Industrial</button>
+          <button>Hospital</button>
+          <button>Residential</button>
+          <button>Office</button>
+          <button>Reconstruction</button>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card" *ngFor="let image of projectImages">
+          <img [src]="image" alt="Project Image" />
+        </div>
+      </div>
+
+      <h1 class="bg-title">PROJECTS</h1>
+    </div>
+  </section>
+
+  <!-- all project end  -->
+  <!-- ABOUT SECTION START -->
+  <section class="about-slider" aria-label="About Company Highlights">
+    <div class="slide-wrapper">
+      <div class="slide" *ngFor="let item of slidess; let i = index" [class.active]="i === currentIndex">
+        <div class="image-box">
+          <img [src]="item.image" [alt]="item.alt" loading="lazy" decoding="async" />
+        </div>
+        <div class="text-box">
+          <h2>
+            <span>Committed</span> to superior<br />
+            quality and results.
+          </h2>
+          <p><strong>{{ item.highlight }}</strong></p>
+          <p>{{ item.description }}</p>
+          <a href="{{ item.link }}" class="read-more" aria-label="Read more about commitment">Read More
+            <span>&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex" (click)="goToSlide(i)">
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT SECTION END  -->
+  <!-- our Misson Start -->
+  <section class="mission-section">
+    <div class="mission-container">
+      <div class="mission-title">
+        <h2>OUR <span>MISSION</span></h2>
+      </div>
+
+      <div class="mission-content">
+        <!-- Left Box -->
+        <div class="mission-left">
+          <h5>Site Areas</h5>
+          <h3>what we serve</h3>
+          <p>
+            Lorem Ipsum available, but the majority have suffered alteration in some form,
+            by ious versions have evolved over the years, sometimes by accident
+          </p>
+          <ul>
+            <li>Construction Management</li>
+            <li>Pre Construction Services</li>
+            <li>Contract Administration</li>
+            <li>Implementation</li>
+            <li>Leed Consultation</li>
+          </ul>
+          <a href="#" class="read-more">Read More &gt;</a>
+        </div>
+
+        <!-- Middle Image -->
+        <div class="mission-center">
+          <img src='assets/projects/ongoing/Industrious.jpg' alt="Construction Image" />
+        </div>
+
+        <!-- Right Contact Form -->
+        <div class="mission-right">
+          <h3>Get In <span>Touch</span></h3>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="tel" placeholder="Phone" />
+            <textarea placeholder="Textarea"></textarea>
+            <button type="submit">SUBMIT NOW</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Big Shadow Text -->
+    <h1 class="shadow-text">MISSION</h1>
+  </section>
+
+  <!-- our misson end  -->
+  <!-- Our value Start-->
+  <section class="our-value-section" aria-labelledby="our-value-heading">
+    <div class="our-value-grid">
+      <!-- Left Column -->
+      <div class="left-content">
+        <h2 id="our-value-heading"><span>OUR</span> VALUE</h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout.
+        </p>
+
+        <div class="signature-block">
+          <img src="assets/signature.png" alt="Signature of David Houkr" loading="lazy" />
+          <div>
+            <strong>David Houkr</strong><br />
+            <span>Architect & Founder</span>
+          </div>
+        </div>
+
+        <figure class="video-presentation">
+          <img src="assets/video-poster.jpg" alt="Video Presentation" loading="lazy" />
+          <figcaption>
+            <a href="#" aria-label="Watch video">
+              <i class="fas fa-play-circle"></i> VIDEO PRESENTATION
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Middle Column - Counters -->
+      <div class="middle-content">
+        <article class="value-box" *ngFor="let item of stats">
+          <h3>{{ item.count }}</h3>
+          <p>{{ item.label }}</p>
+        </article>
+      </div>
+
+      <!-- Right Column - Experience and Bars -->
+      <div class="right-content">
+        <h3>
+          We have <span class="highlight">15 years</span> experience<br />in construction
+        </h3>
+
+        <div class="progress-group" *ngFor="let skill of skills">
+          <div class="skill-label">
+            <strong>{{ skill.name }}</strong> <span>{{ skill.percent }}%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="filled" [style.width.%]="skill.percent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- our value end -->
+
+  <!-- ProjectHighlight end -->
+
+  <section class="contact-section">
+    <div class="contact-wrapper">
+      <div class="contact-form-box">
+        <h2><span>GET</span> IN TOUCH</h2>
+        <form>
+          <input type="text" placeholder="NAME" />
+          <input type="email" placeholder="EMAIL" />
+          <textarea placeholder="MESSAGE"></textarea>
+          <button type="submit">
+            <span>SUBMIT</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="contact-info-box">
+        <h2><span>CONTACT</span> INFO</h2>
+        <ul>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Address</strong><br />
+              F09 Anjuman House Block C-23,<br />
+              Sector 63, Noida, Uttar Pradesh
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong><br />
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@opasbizz.com" target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-envelope-fill fs-5 me-2"></i>info&#64;opasbizz.com
+              </a>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong><br />
+              <a href="tel:+9101204512832">(+012) 045-12832</a><br />
+              <a href="tel:+9101204512833">(+012) 045-12833</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>

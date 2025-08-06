@@ -1,0 +1,56 @@
+<section class="pg-ongoing-banner" role="banner" aria-label="Ongoing Projects Hero Banner">
+  <div class="banner-img-wrapper">
+    <img
+      src="/assets/banner1.avif"
+      alt="Ongoing metro and bridge development in India"
+      width="1920"
+      height="500"
+      class="banner-img"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="banner-content">
+    <h1>ON GOING PROJECTS</h1>
+    <p>
+      Explore the infrastructure we're building across India — roads,
+      metro, bridges, and smart cities in real time.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="pg-wrapper">
+  <h2 class="pg-title">OUR PROJECTS</h2>
+
+  <div class="pg-filters">
+    <button *ngFor="let filter of filters"
+            [class.active]="selectedFilter === filter"
+            (click)="selectedFilter = filter">
+      {{ filter }}
+    </button>
+  </div>
+
+  <div class="pg-grid">
+    <div class="pg-card" *ngFor="let project of filteredProjects">
+      <img [src]="project.image" [alt]="project.title" />
+      <div class="pg-overlay">
+        <div class="pg-text">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-load-more">
+    <button (click)="loadMore()">LOAD MORE</button>
+  </div>
+</section>

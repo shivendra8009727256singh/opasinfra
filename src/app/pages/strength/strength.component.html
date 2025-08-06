@@ -1,0 +1,53 @@
+<section class="hero">
+  <img src="/assets/strength/images/why1.avif" alt="Background Image" class="hero-image" loading="lazy" />
+  <div class="overlay">
+    <div class="content">
+      <h1 class="headline">Our Strengths</h1>
+      <p class="subheadline">Empowering infrastructure with excellence and innovation</p>
+      <div class="badge">
+        <img src="/assets/strength/images/isi_certificates.webp" alt="Global Trust Icon" loading="lazy" />
+        <span>ISO Certified • Trusted Worldwide</span>
+      </div>
+      <a routerLink="/certificate" class="scroll-down">
+        <span>&#x25BC;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="strength-grid container">
+  <div class="strength-card" *ngFor="let item of strengths">
+    <img [src]="item.icon" [alt]="item.title" loading="lazy" />
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </div>
+</section>
+
+<section class="stats-section container">
+  <div class="stat" *ngFor="let stat of stats">
+    <h2>{{ stat.value }}<span>+</span></h2>
+    <p>{{ stat.label }}</p>
+  </div>
+</section>
+
+<section class="choose-us container">
+  <div class="choose-us-image">
+    <img src="/assets/strength/images/why.avif" alt="Why Choose Us" loading="lazy" />
+  </div>
+  <div class="choose-us-text">
+    <h2>Why Choose Opas Infra?</h2>
+    <ul>
+      <li>Transparent and ethical practices</li>
+      <li>On-time and on-budget delivery</li>
+      <li>Modern and safe construction techniques</li>
+      <li>ISO and government certified execution</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2>Let’s Build the Future Together</h2>
+  <a routerLink="/contact" class="btn-primary">Get in Touch</a>
+</section>
